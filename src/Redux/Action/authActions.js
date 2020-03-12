@@ -13,6 +13,9 @@ export const Login = (username, password) => {
     return(dispatch) => {
         Axios.get(`${API_URL}/users?username=${username}&password=${password}`)
         .then((res)=> {
+            if(res.data.length === 0){
+                window.alert('Login Failed')
+            }
             console.log(res)
             localStorage.setItem('token', JSON.stringify({username, password}))
             dispatch({

@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "lianeddy",
+      "password": "abc123",
+      "email": "lian.eddy@gmail.com",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "admin",
+      "email": "admin@admin.com",
+      "role": "admin"
+    },
+    {
+      "username": "asd",
+      "email": "asd",
+      "password": "asd",
+      "role": "user",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "Jordan 1 Retro High Black Crimson Tint",
+      "brand": "Nike",
+      "price": 2950000,
+      "category": "Men",
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ1MDcvM2M5MWUzYjMtM2YwNi00M2E2LTg2MTctZWM4ODY3YjYwMDE2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "id": 2
+    },
+    {
+      "name": "Jordan 1 Mid Multi Color Swoosh",
+      "brand": "Nike",
+      "price": 2350000,
+      "category": "Men",
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "id": 4
+    },
+    {
+      "name": "Jordan 7 Retro Barcelona Nights",
+      "brand": "Jordan",
+      "price": 1350000,
+      "category": "Men",
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ5NDMvMzY5MWY3MDEtZGU0Mi00Mzg0LTg4MjUtNDVkYTdhMzAxYzI0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "id": 5
+    },
+    {
+      "name": "Jordan 7 Retro Barcelona Nights",
+      "brand": "Adidas",
+      "price": 1350000,
+      "category": "Men",
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzcxODYvNTdmMWJkZTgtZmRjNi00NzE1LWJiZDgtYzM3YjVmMjM1M2E4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "id": 7
+    },
+    {
+      "name": "Jordan 7 Retro Barcelona Nights",
+      "brand": "Nike",
+      "price": 1350000,
+      "category": "Men",
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzU2MDIvYzVjNzBiMzQtMDdkYy00ZjVhLWE1NmMtY2JlMzUxYTcwMzM1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "id": 8
+    }
+  ],
+  "latihan": [
+    {
+      "name": "",
+      "brand": "",
+      "price": "",
+      "category": "Men",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nama": "sdds",
+      "boolean": "ds",
+      "laptop": "ds"
+    },
+    {
+      "id": 3,
+      "nama": "sas",
+      "boolean": "(belum terisi)",
+      "laptop": "(belum terisi)"
+    },
+    {
+      "nama": "smdjs",
+      "id": 4,
+      "boolean": "sd",
+      "laptop": "ds"
+    },
+    {
+      "nama": "Fadel ",
+      "id": 5,
+      "boolean": "sa",
+      "laptop": ""
+    },
+    {
+      "nama": "sddsvb",
+      "id": 6
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+9-10
+
+Halaman cart, transaction
+
+Kira2 data apa yang di ambil dari product dalam cart
+bisa ditambahan kuantiit, size, tanggal
+di json buat properti baru 
+cart dan transaction
+
+"cart" : [], --> Jadi yg diambil Id supaya ngebadain user 1 dan lainnya
+"transaction":[]
+
+transaction nilainya gede
+
+Kisi2: 
+
+Ganti password kalo register ada ketentuan

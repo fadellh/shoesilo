@@ -1,0 +1,32 @@
+9-10 : localStorage
+
+localStorage: buat menyimpaen data di browser jadi kalo di refresh ga ilang. Buat nyimpen token
+
+localStorage => localStorage.setItem('username', username) untuk set bisa masuk ke login
+localStorage => localStorage.removeItem('username') untuk set bisa hilang saat di logout
+
+1. Buat setItem di loginPage
+2. Buat remove di headerPage pada variabel logout
+3. Buat buat compenentdidMount untuk mengambil getItem
+4. Untuk ngambil data dari API pake axios.get sesuai username yang diambil dari getItem
+5. Didapatkan res.data
+6. Buat connect untuk menamnggil callAction { Login }
+7. Taro Login setelah dia mendapatkan data dari API
+
+10-11: localStorage, ManageProduct.js
+
+Membuat object dalam localStorage
+
+1. Jika tak memakai JSON.stringfy() maka pada localStorage akan mucul value object,object
+2. Memakai JSON.parse untuk mendapatkan nilai dari objek 'username':'admin' 'password':'admin'
+3. Jika tanpa parse akan berbentuk string. console.log(token)
+4. Ganti url Axios.get(`${API_URL}/users?username=${tokenParse.username}&password=${tokenParse.username}`)
+
+ManageProduct
+
+1. Buat Page ManageProduct
+2. Simpan di App.js dengan dikasih router
+3. Menggunakan tabel reacstsrap
+4. 
+
+

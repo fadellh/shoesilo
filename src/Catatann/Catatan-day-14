@@ -1,0 +1,55 @@
+Jumat, 6 Maret 2019
+
+9-10: Review 
+Redux =>
+
+const store disimpen di  pada index.js untuk menyimpan data dari redux yang bisa diakses semua page
+
+import { createStore } 'redux'
+
+
+const store = createStore(Reducer) --> Reducer => function yang merubah global state
+
+import { Provider } from 'react-redux'; ---> Provider untuk mengakses semua data pada  global state. Semua yg dibungkus provider bisa akses global state
+
+<Provider store={store}>  Dipanggil datanya didalam Provider
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
+
+    action creator adalah function yang me-return sebuah objek dimana harus punya type supaya bisa tau dia masuk case yang mana
+
+    export const authReducer = (state = INITIAL_STATE, action) => {
+    switch(action.type){
+        case 'LOGIN' : 
+            return {
+                id: action.payload.id,
+                username : action.payload.username,
+                email : action.payload.email,
+                role : action.payload.role,
+                logged : true
+            }
+        case 'LOGOUT' : 
+            return INITIAL_STATE
+        default : 
+            return state
+    }
+
+}
+
+export const Login = (data) => {
+    return{
+        type : 'LOGIN',
+        payload : data
+    }
+}
+
+dimana dia diakses mengguakan connect. Jadi Login merupakan action creator
+
+export default connect(mapStateToProps, { Login } )(LoginPage);
+
+
+10-11:
+Belajar Hooks
+

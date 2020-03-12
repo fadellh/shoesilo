@@ -1,0 +1,24 @@
+9-10 Buat tombol edit
+
+Disimpen dalam state supaya tau kondisi mana yang mau di edit berdasaran ID 
+
+Buat fitur edit
+
+1. Buat state selectId : null
+1. Buat onClick function yang menerima parameter function 
+            onClick={()=> this.selectEdit(val.id)}
+2. selectEdit = (id) => {
+        this.setState({
+            selectId: id
+        })
+    }
+3. Dimana properti tambahan di state
+4. 
+
+
+Pagging nilai plus Final Project
+
+11-12 : Redux-thunk
+
+Redux thunk untuk proses asyncroneus -> ketika terjadi dua proses sekaligus 
+

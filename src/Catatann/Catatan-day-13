@@ -1,0 +1,64 @@
+Catatan hari 13 
+
+
+9-10 : Belajar edit data dan menerangkan map
+Jadi setiap ada OnChange biasanya pake e (even) e.target.value karena pengen target ke value yang mengandung val.id
+
+Pada onChange dibuat berbentuk function pada this.setState suapaya dia tidak jalan  terus2an saat di render. Jadi bisa dibuat callback/parameter sehingga hanya pada kondisi  tetrtntu dia jalan
+
+fungsi fetchdata untuk mengambil data dari state. Karena pada fungsi editdata hanya ngambil dari state bukan dari json. Semmentara get ngambil dari json
+
+Alur flownya:
+
+ fetchData = () => {
+        Axios.get('http://localhost:2000/latihan')
+        .then((res) => {
+            console.log(res, 'ini get')
+            this.setState({data: res.data})
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
+Tampilkan di table dimana data berasal dari state
+
+<tbody>
+                            {
+                                this.state.data.map((val) => {
+                                    return (
+                                        <tr style={{border: '1px solid black'}}>
+                                            <td>
+                                                {val.id}
+                                            </td>
+                                            <td>
+                                                {val.nama}
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
+
+Jam 10-11.30 : mengganti json nama, laptop, boolean, latihan edit data supaya bisa ke edit 
+spesifik yang keganti
+
+Jam 11.30-12.00 : Review React
+
+React ganti2 komponen. Yg di ender App.js pada index.js
+Dalam App.js ada rute komponen
+
+state bersifat lokal yang memiliki objek untuk menyimpan data. 
+Data yang diturunkan dari parent ke child itu props
+
+Di child biasanya ga pake class karena banyak fitur yang mubazir jika digunakan class
+Yang ngebungkus itu parent yang di bungkus child
+Karena chlid bisa pake this.props
+
+Jika dari chlid berupa class CardHome extends Component => maka harus menggunakan 
+{this.props.image}
+
+Props selalu ngambil data orang. 
+
+

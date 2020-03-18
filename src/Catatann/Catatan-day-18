@@ -1,0 +1,7 @@
+9-10 : Hosting
+
+
+Hosting: ngasih postingan ke server (komputer yang nyala 24 jam)
+deployment : proses ngasih codingan ke server
+
+kalo firebase butuh 'npm run build ' untuk bundle codinganx

@@ -12,7 +12,7 @@ import {
   DropdownItem
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, fashoppingcart, faShoppingCart, faShoePrints } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Logout } from '../Redux/Action';
@@ -55,6 +55,13 @@ const Example = (props) => {
             <NavItem>
               <NavLink>Kids</NavLink>
             </NavItem>
+            <NavItem>
+                <Link to='/products'>
+              <NavLink>
+                  All Product
+                </NavLink>
+                </Link>
+            </NavItem>
           {/* </Nav> */}
           {/* <Nav navbar> */}
             <UncontrolledDropdown nav inNavbar style={{ float: 'right' }}>
@@ -65,12 +72,17 @@ const Example = (props) => {
                 gState.logged
                 ?
                 <DropdownMenu right>
+                  <Link to='./cartpage'>
                     <DropdownItem>
+                    <FontAwesomeIcon icon={faShoppingCart}/>
                       Cart
                     </DropdownItem>
+                  </Link>
+                  <Link to='./transaction'>
                     <DropdownItem>
                       Transaction History
                     </DropdownItem>
+                  </Link>
                     <DropdownItem>
                       Profile
                     </DropdownItem>

@@ -1,11 +1,13 @@
-import { act } from "react-dom/test-utils"
+// import { act } from "react-dom/test-utils"
 
 const INITIAL_STATE = {
     productList : [],
     brands: [],
     loading: false,
     error: false,
-    productById : {}
+    productById : {},
+    cart:[],
+    cartUser: []
 }
 
 

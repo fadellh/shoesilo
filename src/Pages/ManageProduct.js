@@ -30,7 +30,7 @@ export default class ManageProduct extends Component {
                 this.setState({
                     data: res.data  
                 })
-                console.log(res.data)
+                console.log(res)
                 console.log(this.state.data)
             })
             .catch((err)=>{
@@ -51,7 +51,15 @@ export default class ManageProduct extends Component {
                            <Input defaultValue={val.brand} innerRef={(editBrand) => this.editBrand = editBrand}/>
                        </td>
                        <td>
-                           <Input defaultValue={val.price} type='number' innerRef={(editPrice) => this.editPrice = editPrice}/>
+                           <Input defaultValue=
+                            {
+                                val.price
+                                    ?
+                                val.price.toLocaleString()
+                                    :
+                                    null
+                             } 
+                            type='number' innerRef={(editPrice) => this.editPrice = editPrice}/>
                        </td>
                        <td>
                            <Input defaultValue={val.category} innerRef={(editCategory) => this.editCategory = editCategory}/>
@@ -78,7 +86,15 @@ export default class ManageProduct extends Component {
                         <td>{val.id}</td>
                         <td>{val.name}</td>
                         <td>{val.brand}</td>
-                        <td>{val.price}</td>
+                        <td>
+                            {
+                                val.price
+                                    ?
+                                val.price.toLocaleString()
+                                    :
+                                    null
+                            }
+                        </td>
                         <td>{val.category}</td>
                         <td>
                             <img src={val.image} alt={val.name} height='100'></img>
@@ -143,7 +159,7 @@ export default class ManageProduct extends Component {
         .then((res) => {
             console.log(res)
             this.setState({selectId:null})
-            {this.fetchData()}
+            this.fetchData()
         })
         .catch((err) => {
             console.log(err)
@@ -181,7 +197,7 @@ export default class ManageProduct extends Component {
         console.log(this.image.value)
         let name = this.name.value
         let brand = this.brand.value
-        let price = this.price.value
+        let price = parseInt(this.price.value)
         let category = this.category.value
         let image = this.image.value
         let productData = {

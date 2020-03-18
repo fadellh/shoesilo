@@ -11,11 +11,13 @@ import ProductsPage from './Pages/ProductsPage'
 import LatihanAxios from './Pages/LatihanAxios';
 import Review from './Pages/Review'
 import ProductDetail from './Pages/ProductDetail'
-import {API_URL} from './Support/API_URL'
-import Axios from 'axios'
+// import {API_URL} from './Support/API_URL'
+// import Axios from 'axios'
 import { Login, keepLogin } from './Redux/Action'
 import { connect } from 'react-redux'
 import ManageProduct from './Pages/ManageProduct'
+import CartPage from './Pages/CartPage'
+import TransactionPages from './Pages/TransactionPages'
 
 class App extends Component{
 
@@ -57,6 +59,8 @@ class App extends Component{
         <Route path='/review' component={Review} />
         <Route path='/product-detail' component={ProductDetail} />
         <Route path='/manage-product' component={ManageProduct} />
+        <Route path='/cartpage' component={CartPage} />
+        <Route path='/transaction' component={TransactionPages} />
         <Footer/>
       </div>
     )

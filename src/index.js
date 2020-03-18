@@ -9,7 +9,7 @@ import Reducer from './Redux/Reducer'
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReduxThunk from 'redux-thunk'
-import { configureStore } from '@reduxjs/toolkit'
+// import { configureStore } from '@reduxjs/toolkit'
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { API_URL } from '../Support/API_URL';
+// import axios from 'axios';
+// import { API_URL } from '../Support/API_URL';
 import ProductCard from '../Components/ProductCard';
 import { Link } from 'react-router-dom';
 import {connect } from 'react-redux'

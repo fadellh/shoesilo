@@ -6,20 +6,21 @@ import Loader from 'react-loader-spinner'
 import Swal from 'sweetalert2'
 import Axios from 'axios'
 import { API_URL } from '../Support/API_URL'
-
+import { Redirect } from 'react-router-dom'
 
 
 class CartPage extends Component {
     state = {
        qty: 1,
-       grandTotal: null
+       grandTotal: null,
+       loading:true,
+       finishShop: false
     }  
 
     componentDidMount(){
-        this.props.fetchCart()
-        
-        console.log(this.props.fetchCart(),'data udh keambil')
-        console.log(this.props.cart, 'ini cart awal')
+        let token = localStorage.getItem('token')
+        let userId = JSON.parse(token)
+        this.props.fetchCart(userId.id)
     }
 
 
@@ -38,7 +39,7 @@ deleteCart = (id, image) => {
             Axios.delete(`${API_URL}/cart/${id}`)
             .then((res)=>{
                 console.log(res.data)
-                this.props.fetchCart()
+                this.props.fetchCart(this.props.user.id)
                 Swal.fire(
                   'Deleted!',
                   'Your file has been deleted.',
@@ -57,7 +58,7 @@ renderGrandTotal = () => {
     let priceArr = []
     let jumlah = 0
     let total = 0
-    let userId = this.props.user.id
+    let userId = this.props.user
     console.log(userId)
 
     this.props.cart.map((val) =>{
@@ -68,47 +69,55 @@ renderGrandTotal = () => {
         jumlah=qtyArr[i]*priceArr[i]
         total += jumlah
     }
-    // Axios.post(`${API_URL}/transaction/`,{total})
-    // .then((res)=>{
-    //     // console.log(res)
-    // })
-    // .catch((err)=>{
-    //     console.log(err)
-    // })
     return (
-        <td>{total.toLocaleString()}</td>
+        <td>Rp. {total.toLocaleString()}</td>
     )
 }
 
 nambah = (userIdC,productIdC,nameC,imageC,sizeC,priceC,id,qtyInc) => {
-    let userId = userIdC
-    let productId = productIdC
-    let name = nameC
-    let image = imageC
-    let price = priceC
-    let size = sizeC
-    let qty = qtyInc+1  
-    Axios.put(`http://localhost:2000/cart/${id}`, {userId,productId,name,price,image,size,qty}  )
+    let obj={
+        userId : userIdC,
+        productId :  productIdC,
+        name :  nameC,
+        image :  imageC,
+        price :  priceC,
+        size :  sizeC,
+        qty :  qtyInc+1  
+    }
+
+    this.setState({
+        loading: true
+    })
+
+
+    Axios.patch(`http://localhost:2000/cart/${id}`, obj  )
         .then((res) => {
             console.log(res)
-            this.props.fetchCart()
+            this.props.fetchCart(this.props.user.id)
         })
         .catch((err) => {
             console.log(err)
         })
 }
 decrement = (userIdC,productIdC,nameC,imageC,sizeC,priceC,id,qtyInc) => {    
-        let userId = userIdC
-        let productId = productIdC
-        let name = nameC
-        let image = imageC
-        let price = priceC
-        let size = sizeC
-        let qty = qtyInc-1
-    Axios.put(`http://localhost:2000/cart/${id}`, {userId,productId,name,price,image,size,qty}  )
+    let obj={
+        userId : userIdC,
+        productId :  productIdC,
+        name :  nameC,
+        image :  imageC,
+        price :  priceC,
+        size :  sizeC,
+        qty :  qtyInc-1  
+    }
+
+    this.setState({
+        loading: true
+    })
+
+    Axios.patch(`http://localhost:2000/cart/${id}`, obj )
     .then((res) => {
             console.log(res)
-            this.props.fetchCart()
+            this.props.fetchCart(this.props.user.id)
         })
         .catch((err) => {
             console.log(err)
@@ -124,8 +133,13 @@ render(){
                 ERROR
             </div>
         )
+    }else if(this.state.finishShop){
+        return(
+            <Redirect to='/transaction'/>
+        )
     }
     if(this.props.loading){
+        console.log("LOADING BERHASIL")
         return(
             <div className='d-flex justify-content-center'>
                  <Loader
@@ -144,10 +158,11 @@ render(){
         <Table>
         <thead>
             <tr>
+            <th>Id</th>
             <th>Images</th>
             <th>Name</th>
             <th>Size</th>
-            <th colspan='3' >Qty</th>
+            <th colSpan='3' >Qty</th>
             <th>Price</th>
             <th>Action</th>
             <th></th>
@@ -157,7 +172,8 @@ render(){
 
             {this.props.cart.map((val)=>{
                 return(
-                    <tr>
+                    <tr key={val.id}>
+                        <td>{val.id}</td>
                         <td><img src={val.image} alt={val.name} height='100'></img></td>
                         <td>{val.name}</td>
                         <td>{val.size}</td>
@@ -170,7 +186,7 @@ render(){
                         </td>
                         
                         {/* <td>{val.price}</td> */}
-                        <td>{val.price.toLocaleString()}</td>
+                        <td>Rp. {val.price.toLocaleString()}</td>
                         <td>
                             <Button color='danger' onClick={()=>this.deleteCart(val.id,val.image)}>Delete</Button>
                         </td>
@@ -189,7 +205,7 @@ render(){
                 <td>
                     <h4>Grand Total</h4>
                 </td>
-                <td>{this.renderGrandTotal()}</td>
+                {this.renderGrandTotal()}
                 <td>
                     <Button onClick={this.checkout=()=>{
                         Swal.fire({
@@ -214,18 +230,9 @@ render(){
                             jumlah=qtyArr[i]*priceArr[i]
                             total += jumlah
                         }
-                          //Jika sudah berhasil data Cart Hilang
-                        let kosong = []
                         let username = this.props.user.username 
                         let userId = this.props.user.id
                         let totalAmount = total
-                        //   let userId = this.props.cart.userId
-                        //   let productId = this.props.cart.productId
-                        //   let name = this.props.cart.name
-                        //   let image = this.props.cart.image
-                        //   let price = this.props.cart.price
-                        //   let size = this.props.cart.size
-                        //   let qty = this.props.cart.qty
                         let productCart = this.props.cart
                         var month = new Date().getMonth() + 1; //Current Month
                         var day = new Date().getDate()
@@ -233,15 +240,25 @@ render(){
                         var date = year + "/" + month + "/" + day
                         console.log(this.props.cart)
                         console.log(this.props.user)
-
+                        
                         let transactionData = {
-                              username, userId, productCart, totalAmount, date
+                            totalAmount, date, productCart,username, userId
                         }
-
+                        
                         this.props.addTransaction(transactionData)
-                        //Hilangan transaction
-
-                        }}>
+                      
+                        //Jika sudah berhasil data Cart Hilang
+                        let id = this.props.cart.map(val => {
+                            return val.id
+                        })
+                        
+                        id.forEach(val => {
+                            Axios.delete(`${API_URL}/cart/${val}`)
+                        })
+                        this.setState({
+                            finishShop: true
+                        })
+                    }}>
                         Checkout
                     </Button>
                     </td>

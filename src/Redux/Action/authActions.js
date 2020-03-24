@@ -17,7 +17,7 @@ export const Login = (username, password) => {
                 window.alert('Login Failed')
             }
             console.log(res)
-            localStorage.setItem('token', JSON.stringify({username, password}))
+            localStorage.setItem('token', JSON.stringify({username, password, id: res.data[0].id}))
             dispatch({
                 type: 'LOGIN',
                 payload: res.data[0] //untuk initial state langsung dari axios

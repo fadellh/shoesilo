@@ -7,8 +7,34 @@ import { connect } from 'react-redux';
 import { Login } from '../Redux/Action';
 
 class LoginPage extends Component {
-    state = {  }
+    state = { 
+        inputUser: {
+            Username : '',
+            char : false,
+            num: false,
+            show: false
+        }
+     }
 
+    handleChange = (e) =>{
+        let pass = e.target.value
+        // let num = /[0-9]/
+        // console.log(pass)
+        if(pass.length<8){
+            window.alert('harus lebih dari 8')
+            return(
+                <div>
+                    password harus lebih dari 8
+                </div>
+            )
+        }
+        // if(pass == )
+        // this.setState({
+        //     char: ,
+        //     // num : pass.test(num)
+        // })
+    }
+    
     onBtnRegister = () => {
         let username = this.username.value;
         let email = this.email.value;
@@ -48,14 +74,15 @@ class LoginPage extends Component {
     }
 
     render() { 
+        let {char,num,show} = this.state.inputUser
         if(this.props.logged){
             return(
                 <Redirect to='/'/>
             )
         }
-
         return ( 
             <div className='d-flex justify-content-center' style={{height : '100vh', alignItems : 'center'}}>
+                {console.log(this.state.inputUser.char)}
                 <Form style={{width : '400px', height: '400px'}}>
                     <FormGroup>
                       <Label for="exampleEmail">Username</Label>
@@ -67,7 +94,7 @@ class LoginPage extends Component {
                     </FormGroup>
                     <FormGroup>
                       <Label for="examplePassword">Password</Label>
-                      <Input type="password" name="password" id="examplePassword" placeholder="Password" innerRef={(password) => this.password = password}/>
+                      <Input type="password" name="password" id="examplePassword" placeholder="Password" innerRef={(password) => this.password = password} onChange={this.handleChange} />
                     </FormGroup>
                     <FormGroup>
                       <Label for="examplePassword">Confirm Password</Label>
@@ -84,6 +111,13 @@ class LoginPage extends Component {
                         </Link>
                     </div>
                 </Form>
+                    {/* {
+                        // console.log(char, 'INI CHAR')
+                        show
+                        ?
+                        char?window.alert('yeay'):window.alert('oker')
+                        :null
+                    } */}
             </div>
         );
     }

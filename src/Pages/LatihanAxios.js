@@ -56,16 +56,20 @@ class LatihanAxios extends Component {
 
     onBtnEditData = () => {
         let {nama, boolean, laptop} = this.state.form;
-        let obj = {}
-        if(nama){
-            obj.nama = nama
+        let obj = {
+            // nama:nama,
+            // boolean:boolean,
+            laptop:laptop+nama
         }
-        if(boolean){
-            obj.boolean = boolean
-        }
-        if(laptop){
-            obj.laptop = laptop
-        }
+        // if(nama){
+        //     obj.nama = nama
+        // }
+        // if(boolean){
+        //     obj.boolean = boolean
+        // }
+        // if(laptop){
+        //     obj.laptop = laptop
+        // }
 
         Axios.patch(`http://localhost:2000/latihan/${this.state.idData}`, obj )
         .then((res) => {

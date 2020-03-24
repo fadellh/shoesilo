@@ -5,8 +5,8 @@ import { Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import LoginPage from './Pages/LoginPage';
-// import RegisterPage from './Pages/RegisterPage';
-import RegisterPage from './Pages/RegisterHooks'
+import RegisterPage from './Pages/RegisterPage';
+// import RegisterPage from './Pages/RegisterHooks'
 import ProductsPage from './Pages/ProductsPage'
 import LatihanAxios from './Pages/LatihanAxios';
 import Review from './Pages/Review'
@@ -18,6 +18,7 @@ import { connect } from 'react-redux'
 import ManageProduct from './Pages/ManageProduct'
 import CartPage from './Pages/CartPage'
 import TransactionPages from './Pages/TransactionPages'
+import Profile from './Pages/Profile'
 
 class App extends Component{
 
@@ -61,6 +62,7 @@ class App extends Component{
         <Route path='/manage-product' component={ManageProduct} />
         <Route path='/cartpage' component={CartPage} />
         <Route path='/transaction' component={TransactionPages} />
+        <Route path='/profile' component={Profile} />
         <Footer/>
       </div>
     )

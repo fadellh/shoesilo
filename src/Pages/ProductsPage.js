@@ -19,6 +19,7 @@ class ProductsPage extends Component{
     componentDidMount(){
 
         this.props.fetchProduct()
+        console.log(this.props.fetchProduct())
         // axios.get(`${API_URL}/products`)
         // .then((res) => {
         //     this.setState({

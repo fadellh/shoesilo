@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import {API_URL} from "../../Support/API_URL"
 
-export const addToCart = (cartData) => {
+export const addToCart = (cartData,userId,productId) => {
     return(dispatch) => {
         dispatch({
             type: 'FETCH_DATA_START'
@@ -64,14 +64,14 @@ export const endCart = (user) => {
     }
 }
 
-export const fetchCart = () => {
+export const fetchCart = (id) => {
     return(dispatch)=> {
         dispatch({
             type: 'FETCH_DATA_START'
         })
-        Axios.get(`${API_URL}/cart`)
+        Axios.get(`${API_URL}/cart?userId=${id}`)
         .then((res)=> {
-            // console.log(res)
+            // console.log(res.data, 'INI DARI FETCH CART')
             dispatch({
                 type: 'FETCH_CART_SUCCES',
                 payload: res.data
@@ -85,12 +85,12 @@ export const fetchCart = () => {
             })
     }
 }
-export const fetchTransaction = () => {
+export const fetchTransaction = (id) => {
     return(dispatch)=> {
         dispatch({
             type: 'FETCH_DATA_START'
         })
-        Axios.get(`${API_URL}/transaction`)
+        Axios.get(`${API_URL}/transaction?userId=${id}`)
         .then((res)=> {
             // console.log(res)
             dispatch({

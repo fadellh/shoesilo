@@ -9,7 +9,9 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  NavbarText,
+  Alert
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, fashoppingcart, faShoppingCart, faShoePrints } from '@fortawesome/free-solid-svg-icons';
@@ -23,8 +25,8 @@ const Example = (props) => {
   const gState = useSelector(({auth}) => {
     return{
       logged : auth.logged,
-      username : auth.username
-
+      username : auth.username,
+      role : auth.role
     }
   });
   console.log(gState)
@@ -67,6 +69,7 @@ const Example = (props) => {
             <UncontrolledDropdown nav inNavbar style={{ float: 'right' }}>
               <DropdownToggle nav caret>
                 <FontAwesomeIcon icon={faUser}/>
+                {/* {gState.username} */}
               </DropdownToggle>
               {
                 gState.logged
@@ -83,9 +86,28 @@ const Example = (props) => {
                       Transaction History
                     </DropdownItem>
                   </Link>
-                    <DropdownItem>
-                      Profile
-                    </DropdownItem>
+                  {/* <DropdownItem> */}
+                  {
+                    gState.role=='admin'
+                    ?
+                    (
+                    <Link to='/manage-product'>
+                      <DropdownItem>
+                        Manage Product
+                      </DropdownItem>
+                    </Link>
+                    )
+                    :
+                    (
+                      <Link to='/profile'>
+                      <DropdownItem>
+                        Profile
+                      </DropdownItem>
+                    </Link>
+                    )
+                    
+                  }
+                    {/* </DropdownItem> */}
                     <Link to ='/'>
                       <DropdownItem onClick={logOut}>
                         Log Out
@@ -110,6 +132,9 @@ const Example = (props) => {
             </UncontrolledDropdown>
           </Nav>
         </Collapse>
+              <Alert color="primary">
+                Welcome back! {gState.username}
+              </Alert> 
       </Navbar>
     </div>
   );

@@ -20,6 +20,41 @@
       "password": "asd",
       "role": "user",
       "id": 3
+    },
+    {
+      "username": "fadellh",
+      "email": "fadel.lukman@gmail.com",
+      "password": "123",
+      "role": "user",
+      "id": 4
+    },
+    {
+      "username": "fadel",
+      "email": "fadel.lukman@gmail.com",
+      "password": "456",
+      "role": "user",
+      "id": 5
+    },
+    {
+      "username": "",
+      "email": "jhsd",
+      "password": "",
+      "role": "user",
+      "id": 6
+    },
+    {
+      "username": "asdf",
+      "email": "asd",
+      "password": "123",
+      "role": "user",
+      "id": 7
+    },
+    {
+      "username": "hai",
+      "email": "ho",
+      "password": "123456789",
+      "role": "user",
+      "id": 8
     }
   ],
   "products": [
@@ -82,53 +117,21 @@
   ],
   "latihan": [
     {
-      "name": "",
-      "brand": "",
-      "price": "",
-      "category": "Men",
+      "nama": "",
       "id": 1
     },
     {
+      "nama": "romy",
       "id": 2,
-      "nama": "sdds",
-      "boolean": "ds",
-      "laptop": "ds"
+      "laptop": "sasiapa",
+      "lepi": "sa"
     },
     {
-      "id": 3,
-      "nama": "sas",
-      "boolean": "(belum terisi)",
-      "laptop": "(belum terisi)"
-    },
-    {
-      "nama": "smdjs",
-      "id": 4,
-      "boolean": "sd",
-      "laptop": "ds"
-    },
-    {
-      "nama": "Fadel ",
-      "id": 5,
-      "boolean": "sa",
-      "laptop": ""
-    },
-    {
-      "nama": "sddsvb",
-      "id": 6
+      "nama": "sa",
+      "id": 3
     }
   ],
   "cart": [
-    {
-      "userId": 2,
-      "productId": 4,
-      "name": "Jordan 1 Mid Multi Color Swoosh",
-      "price": 2350000,
-      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
-      "size": 43,
-      "qty": 3,
-      "grandTotal": 33750000,
-      "id": 1
-    },
     {
       "userId": 2,
       "productId": 2,
@@ -136,40 +139,128 @@
       "price": 2950000,
       "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ1MDcvM2M5MWUzYjMtM2YwNi00M2E2LTg2MTctZWM4ODY3YjYwMDE2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
       "size": 43,
-      "qty": 3,
+      "qty": 4,
       "id": 3
+    },
+    {
+      "userId": 4,
+      "productId": 5,
+      "name": "Jordan 7 Retro Barcelona Nights",
+      "price": 1350000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ5NDMvMzY5MWY3MDEtZGU0Mi00Mzg0LTg4MjUtNDVkYTdhMzAxYzI0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 42,
+      "qty": 4,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "productId": 2,
+      "name": "Jordan 1 Retro High Black Crimson Tint",
+      "price": 2950000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ1MDcvM2M5MWUzYjMtM2YwNi00M2E2LTg2MTctZWM4ODY3YjYwMDE2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 42,
+      "qty": 1,
+      "id": 5
+    },
+    {
+      "userId": 4,
+      "productId": 2,
+      "name": "Jordan 1 Retro High Black Crimson Tint",
+      "price": 2950000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ1MDcvM2M5MWUzYjMtM2YwNi00M2E2LTg2MTctZWM4ODY3YjYwMDE2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 42,
+      "qty": 1,
+      "id": 7
+    },
+    {
+      "userId": 4,
+      "productId": 4,
+      "name": "Jordan 1 Mid Multi Color Swoosh",
+      "price": 2350000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 42,
+      "qty": 1,
+      "id": 8
+    },
+    {
+      "userId": 4,
+      "productId": 4,
+      "name": "Jordan 1 Mid Multi Color Swoosh",
+      "price": 2350000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 45,
+      "qty": 1,
+      "id": 9
+    },
+    {
+      "userId": 4,
+      "productId": 4,
+      "name": "Jordan 1 Mid Multi Color Swoosh",
+      "price": 2350000,
+      "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+      "size": 44,
+      "qty": 1,
+      "id": 10
     }
   ],
   "transaction": [
     {
-      "username": "admin",
-      "userId": 2,
+      "totalAmount": 17050000,
+      "date": "2020/3/24",
       "productCart": [
         {
-          "userId": 2,
+          "userId": 5,
           "productId": 4,
           "name": "Jordan 1 Mid Multi Color Swoosh",
           "price": 2350000,
           "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzYyMjYvODdjNmRkMTktOTAzMS00NmM0LTg2NzItYjRmMWEwZThjM2Q1LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
           "size": 43,
           "qty": 3,
-          "grandTotal": 33750000,
-          "id": 1
+          "id": 11
         },
         {
-          "userId": 2,
-          "productId": 2,
-          "name": "Jordan 1 Retro High Black Crimson Tint",
-          "price": 2950000,
-          "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQ1MDcvM2M5MWUzYjMtM2YwNi00M2E2LTg2MTctZWM4ODY3YjYwMDE2LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
-          "size": 43,
-          "qty": 3,
-          "id": 3
+          "userId": 5,
+          "productId": 9,
+          "name": "Nike React Vision Light Bone Terra Blush Photo Blue",
+          "price": 3250000,
+          "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzcyMDYvNjk4YjhlZjYtOWMwOC00NTE0LWJhMjYtYTJkNjEzYjQ4OTRiLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfX19",
+          "size": 44,
+          "qty": 1,
+          "id": 12
+        },
+        {
+          "userId": 5,
+          "productId": 7,
+          "name": "Jordan 7 Retro Barcelona Nights",
+          "price": 1350000,
+          "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzcxODYvNTdmMWJkZTgtZmRjNi00NzE1LWJiZDgtYzM3YjVmMjM1M2E4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH19fQ==",
+          "size": 44,
+          "qty": 5,
+          "id": 13
         }
       ],
-      "totalAmount": 15900000,
-      "date": "2020/3/18",
+      "username": "fadel",
+      "userId": 5,
       "id": 1
+    },
+    {
+      "totalAmount": 44000000,
+      "date": "2020/3/24",
+      "productCart": [
+        {
+          "userId": 5,
+          "productId": 10,
+          "name": "Jordan 5 Retro Supreme Desert Camo",
+          "price": 11000000,
+          "image": "https://d38t85204sb0x0.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzM1MS9iODU0Yzk5NC1kZjdmLTQ3NWMtOTk4My00YzVjYjUyZjMzOTYuanBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfX19",
+          "size": 42,
+          "qty": 4,
+          "id": 11
+        }
+      ],
+      "username": "fadel",
+      "userId": 5,
+      "id": 2
     }
   ]
 }
